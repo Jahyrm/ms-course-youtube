@@ -42,7 +42,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
-Feign:
+feign:
   hystrix:
     enabled: true
 management:
@@ -50,3 +50,12 @@ management:
     web:
       exposure:
         include: "*"
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 12000
